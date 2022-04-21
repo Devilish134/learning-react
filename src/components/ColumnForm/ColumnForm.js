@@ -2,14 +2,26 @@ import styles from "./ColumnForm.module.scss";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import shortid from "shortid";
 
-const ColumnForm = (props) => {
-  const [value, setValue] = useState("");
+const ColumnForm = () => {
+  const dispatch = useDispatch();
+
+  const [title, setTitle] = useState("");
   const [icon, setIcon] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.action({ title: value, icon: icon });
-    setValue("");
+    dispatch({
+      type: "ADD_COLUMN",
+      newColumn: {
+        id: shortid(),
+        title,
+        icon,
+      },
+    });
+    setTitle("");
     setIcon("");
   };
 
@@ -20,14 +32,14 @@ const ColumnForm = (props) => {
     >
       <TextInput
         placeholder="Category"
-        value={value}
+        title={title}
         onChange={(e) =>
-          setValue(e.target.value)
+          setTitle(e.target.value)
         }
       />
       <TextInput
         placeholder="Icon"
-        value={icon}
+        title={icon}
         onChange={(e) =>
           setIcon(e.target.value)
         }
