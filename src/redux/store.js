@@ -8,9 +8,15 @@ const reducer = (state, action) => {
         ...state,
         columns: [
           ...state.columns,
-          {
-            ...action.payload,
-          },
+          { ...action.payload },
+        ],
+      };
+    case 'ADD_TITLE':
+      return {
+        ...state,
+        cards: [
+          ...state.cards,
+          { ...action.payload },
         ],
       };
     default:

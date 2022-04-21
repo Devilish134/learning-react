@@ -1,9 +1,9 @@
 import styles from './ColumnForm.module.scss';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
+import shortid from 'shortid';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import shortid from 'shortid';
 
 const ColumnForm = () => {
   const dispatch = useDispatch();
