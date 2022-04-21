@@ -3,32 +3,32 @@ import styles from "./Column.module.scss";
 import Card from "../Card/Card.";
 import CardForm from "../CardForm/CardForm";
 
-const Column = (props) => {
+const Column = ({
+  id,
+  icon,
+  title,
+  action,
+}) => {
   const cards = useSelector(
     (state) => state.cards
-  ).filter(
-    (card) => card.columnId === props.id
-  );
+  ).filter((card) => card.columnId === id);
 
   return (
     <article className={styles.column}>
       <h2 className={styles.title}>
         <span
           className={
-            styles.icon + " fa fa-" + props.icon
+            styles.icon + " fa fa-" + icon
           }
         />
-        {props.title}
+        {title}
       </h2>
       <ul className={styles.cards}>
         {cards.map((card) => (
           <Card key={card.id} {...card} />
         ))}
       </ul>
-      <CardForm
-        columnId={props.id}
-        action={props.action}
-      />
+      <CardForm columnId={id} action={action} />
     </article>
   );
 };
