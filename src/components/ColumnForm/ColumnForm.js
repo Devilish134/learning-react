@@ -1,28 +1,28 @@
-import styles from "./ColumnForm.module.scss";
-import Button from "../Button/Button";
-import TextInput from "../TextInput/TextInput";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import shortid from "shortid";
+import styles from './ColumnForm.module.scss';
+import Button from '../Button/Button';
+import TextInput from '../TextInput/TextInput';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import shortid from 'shortid';
 
 const ColumnForm = () => {
   const dispatch = useDispatch();
 
-  const [title, setTitle] = useState("");
-  const [icon, setIcon] = useState("");
+  const [title, setTitle] = useState('');
+  const [icon, setIcon] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
-      type: "ADD_COLUMN",
-      newColumn: {
+      type: 'ADD_COLUMN',
+      payload: {
         id: shortid(),
         title,
         icon,
       },
     });
-    setTitle("");
-    setIcon("");
+    setTitle('');
+    setIcon('');
   };
 
   return (
@@ -31,14 +31,14 @@ const ColumnForm = () => {
       onSubmit={handleSubmit}
     >
       <TextInput
-        placeholder="Category"
+        placeholder='Category'
         title={title}
         onChange={(e) =>
           setTitle(e.target.value)
         }
       />
       <TextInput
-        placeholder="Icon"
+        placeholder='Icon'
         title={icon}
         onChange={(e) =>
           setIcon(e.target.value)

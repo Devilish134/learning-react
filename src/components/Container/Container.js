@@ -1,4 +1,4 @@
-import styles from "./Container.module.scss";
+import styles from './Container.module.scss';
 
 const Container = ({ children }) => {
   return (

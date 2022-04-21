@@ -1,4 +1,4 @@
-import styles from "./TextInput.module.scss";
+import styles from './TextInput.module.scss';
 
 const TextInput = ({
   value,
@@ -11,7 +11,7 @@ const TextInput = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      type="text"
+      type='text'
     />
   );
 };

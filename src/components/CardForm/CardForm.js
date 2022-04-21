@@ -1,14 +1,14 @@
-import styles from "./CardForm.module.scss";
-import Button from "../Button/Button";
-import TextInput from "../TextInput/TextInput";
-import { useState } from "react";
+import styles from './CardForm.module.scss';
+import Button from '../Button/Button';
+import TextInput from '../TextInput/TextInput';
+import { useState } from 'react';
 
 const CardForm = ({ columnId, props }) => {
-  const [title, setValue] = useState("");
+  const [title, setValue] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     props.action({ title: title }, columnId);
-    setValue("");
+    setValue('');
   };
 
   return (
@@ -17,7 +17,7 @@ const CardForm = ({ columnId, props }) => {
       onSubmit={handleSubmit}
     >
       <TextInput
-        placeholder="Title"
+        placeholder='Title'
         value={title}
         onChange={(e) =>
           setValue(e.target.value)

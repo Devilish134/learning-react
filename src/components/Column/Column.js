@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import styles from "./Column.module.scss";
-import Card from "../Card/Card.";
-import CardForm from "../CardForm/CardForm";
+import { useSelector } from 'react-redux';
+import styles from './Column.module.scss';
+import Card from '../Card/Card.';
+import CardForm from '../CardForm/CardForm';
 
 const Column = ({
   id,
@@ -18,7 +18,7 @@ const Column = ({
       <h2 className={styles.title}>
         <span
           className={
-            styles.icon + " fa fa-" + icon
+            styles.icon + ' fa fa-' + icon
           }
         />
         {title}

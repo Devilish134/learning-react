@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import styles from "./List.module.scss";
-import Column from "../Column/Column";
-import ColumnForm from "../ColumnForm/ColumnForm";
+import { useSelector } from 'react-redux';
+import styles from './List.module.scss';
+import Column from '../Column/Column';
+import ColumnForm from '../ColumnForm/ColumnForm';
 
 const List = () => {
   const columns = useSelector(
