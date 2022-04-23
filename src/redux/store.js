@@ -19,6 +19,11 @@ const reducer = (state, action) => {
           { ...action.payload },
         ],
       };
+    case 'FILTER_CARDS':
+      return {
+        ...state,
+        searchString: action.payload,
+      };
     default:
       return state;
   }

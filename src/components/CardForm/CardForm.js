@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 const CardForm = ({ columnId }) => {
   const dispatch = useDispatch();
 
-  const [title, setValue] = useState('');
+  const [title, setTilte] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
@@ -19,7 +19,7 @@ const CardForm = ({ columnId }) => {
         title,
       },
     });
-    setValue('');
+    setTilte('');
   };
 
   return (
@@ -31,7 +31,7 @@ const CardForm = ({ columnId }) => {
         placeholder='Title'
         title={title}
         onChange={(e) =>
-          setValue(e.target.value)
+          setTilte(e.target.value)
         }
       />
       <Button>Add Title</Button>
