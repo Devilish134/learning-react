@@ -29,7 +29,7 @@ const CardForm = ({ columnId }) => {
     >
       <TextInput
         placeholder='Title'
-        title={title}
+        value={title}
         onChange={(e) =>
           setTilte(e.target.value)
         }

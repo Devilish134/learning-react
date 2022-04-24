@@ -32,14 +32,14 @@ const ColumnForm = () => {
     >
       <TextInput
         placeholder='Category'
-        title={title}
+        vale={title}
         onChange={(e) =>
           setTitle(e.target.value)
         }
       />
       <TextInput
         placeholder='Icon'
-        title={icon}
+        value={icon}
         onChange={(e) =>
           setIcon(e.target.value)
         }
