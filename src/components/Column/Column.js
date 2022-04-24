@@ -3,9 +3,14 @@ import Card from '../Card/Card.';
 import CardForm from '../CardForm/CardForm';
 import { useSelector } from 'react-redux';
 
-const Column = ({ id, icon, title, state }) => {
+const Column = ({
+  id,
+  icon,
+  title,
+  action,
+}) => {
   const searchString = useSelector(
-    (state) => state.searchString
+    (state) => state.searchString.search
   );
 
   const cards = useSelector(
@@ -15,7 +20,9 @@ const Column = ({ id, icon, title, state }) => {
       card.columnId === id &&
       card.title
         .toLowerCase()
-        .includes(searchString.toLowerCase())
+        .includes(
+          searchString.toString().toLowerCase()
+        )
   );
 
   return (
@@ -32,12 +39,11 @@ const Column = ({ id, icon, title, state }) => {
         {cards.map((card) => (
           <Card
             key={card.id}
-            {...card}
             title={card.title}
           />
         ))}
       </ul>
-      <CardForm columnId={id} />
+      <CardForm columnId={id} action={action} />
     </article>
   );
 };
