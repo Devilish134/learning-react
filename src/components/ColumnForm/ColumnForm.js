@@ -32,7 +32,7 @@ const ColumnForm = () => {
     >
       <TextInput
         placeholder='Category'
-        vale={title}
+        value={title}
         onChange={(e) =>
           setTitle(e.target.value)
         }

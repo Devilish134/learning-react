@@ -14,6 +14,8 @@ export const getFilteredCards = (
       strContains(card.title, search)
   );
 
+export const getAllColumns = (state) =>
+  state.columns;
 //reducer
 
 const reducer = (state, action) => {
