@@ -13,6 +13,7 @@ const Column = ({
   const cards = useSelector((state) =>
     getFilteredCards(state, id)
   );
+  console.log('Column render');
 
   return (
     <article className={styles.column}>

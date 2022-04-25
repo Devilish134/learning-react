@@ -1,6 +1,7 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
 import strContains from '../utils/strContains';
+import { createSelector } from 'reselect';
 
 //selectors
 
@@ -14,8 +15,17 @@ export const getFilteredCards = (
       strContains(card.title, search)
   );
 
-export const getAllColumns = (state) =>
-  state.columns;
+export const getAllColumns = createSelector(
+  [
+    (state) => state.columns,
+    (state, category) => category,
+  ],
+  (columns, category) =>
+    columns.filter(
+      (columns) => columns.category === category
+    )
+);
+
 //reducer
 
 const reducer = (state, action) => {
