@@ -26,6 +26,37 @@ export const getAllColumns = createSelector(
     )
 );
 
+//try to use reducer. Not working properly.
+
+/*export const getAllColumns = createSelector(
+  (state) => state.columns,
+  (columns, title) =>
+    columns.map((id) => {
+      const column = columns[id, title];
+      return {
+        ...columns,
+        column: columns[column.title],
+      };
+    })
+);*/
+
+// action creators
+
+export const addColumn = (payload) => ({
+  type: 'ADD_COLUMN',
+  payload,
+});
+
+export const addTitle = (payload) => ({
+  type: 'ADD_TITLE',
+  payload,
+});
+
+export const filterCards = (payload) => ({
+  type: 'FILTER_CARDS',
+  payload,
+});
+
 //reducer
 
 const reducer = (state, action) => {
