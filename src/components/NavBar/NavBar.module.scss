@@ -1,0 +1,30 @@
+@use "sass:math";
+@import '../../styles/settings.scss';
+
+nav {
+  background-color: darken($color-dark, 3%);
+  max-height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pages {
+  margin: 25px;
+  margin-right: 68px;
+
+  & a {
+    font-size: 20px;
+  }
+}
+
+.icon {
+  margin: 23px 15px;
+}
+
+a {
+  text-decoration: none;
+  color: $color-light;
+  font-weight: 800;
+  font-size: 28px;
+  margin: 5px;
+}
