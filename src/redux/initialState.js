@@ -12,6 +12,7 @@ const initialState = {
       description: 'Lorem Ipsum',
     },
   ],
+
   columns: [
     {
       id: 1,
