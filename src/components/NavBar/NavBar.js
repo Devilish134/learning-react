@@ -28,7 +28,6 @@ const NavBar = () => {
             {name}
           </NavLink>
         ))}
-        ;
       </div>
     </nav>
   );
