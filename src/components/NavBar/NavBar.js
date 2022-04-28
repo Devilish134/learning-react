@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { Pages } from './Consts';
 import styles from './NavBar.module.scss';
 
 const NavBar = () => {
@@ -14,36 +15,20 @@ const NavBar = () => {
         </a>
       </div>
       <div className={styles.pages}>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? styles.linkActive
-              : undefined
-          }
-          to='/'
-        >
-          Home
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? styles.linkActive
-              : undefined
-          }
-          to='/favorite'
-        >
-          Favorite
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? styles.linkActive
-              : undefined
-          }
-          to='/About'
-        >
-          About{' '}
-        </NavLink>
+        {Pages.map(({ path, name }) => (
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? styles.linkActive
+                : undefined
+            }
+            key={name}
+            to={path}
+          >
+            {name}
+          </NavLink>
+        ))}
+        ;
       </div>
     </nav>
   );
