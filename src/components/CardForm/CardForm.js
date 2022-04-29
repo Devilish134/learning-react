@@ -9,7 +9,7 @@ import { addTitle } from '../../redux/store';
 const CardForm = ({ columnId }) => {
   const dispatch = useDispatch();
 
-  const [title, setTilte] = useState('');
+  const [title, setTitle] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(
@@ -19,7 +19,7 @@ const CardForm = ({ columnId }) => {
         title,
       })
     );
-    setTilte('');
+    setTitle('');
   };
 
   return (
@@ -31,7 +31,7 @@ const CardForm = ({ columnId }) => {
         placeholder='Title'
         value={title}
         onChange={(e) =>
-          setTilte(e.target.value)
+          setTitle(e.target.value)
         }
       />
       <Button>Add Title</Button>

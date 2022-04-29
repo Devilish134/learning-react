@@ -8,6 +8,7 @@ import Favorite from './components/Favorite/Favorite';
 import About from './components/About/About';
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
+import List from './components/List/List';
 
 const App = () => {
   return (
@@ -16,6 +17,10 @@ const App = () => {
       <Container>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route
+            path='/list/:listId'
+            element={<List />}
+          />
           <Route
             path='/about'
             element={<About />}

@@ -4,9 +4,7 @@ import { getAllLists } from '../../redux/store';
 import styles from './Lists.module.scss';
 
 const Lists = () => {
-  const lists = useSelector((state) =>
-    getAllLists(state)
-  );
+  const lists = useSelector(getAllLists);
 
   return (
     <section className={styles.lists}>
@@ -16,7 +14,7 @@ const Lists = () => {
       {lists.map((list) => (
         <Link
           key={list.id}
-          to=''
+          to={'/list/' + list.id}
           className={styles.listLink}
         >
           <h3>{list.title}</h3>

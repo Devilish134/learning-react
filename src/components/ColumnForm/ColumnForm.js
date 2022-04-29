@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store';
 
-const ColumnForm = () => {
+const ColumnForm = ({ listId }) => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
@@ -15,7 +15,12 @@ const ColumnForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(
-      addColumn({ id: shortid(), title, icon })
+      addColumn({
+        id: shortid(),
+        listId,
+        title,
+        icon,
+      })
     );
     setTitle('');
     setIcon('');

@@ -7,18 +7,16 @@ import {
 import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
-//import { useParams } from 'react-router';
+import { useParams } from 'react-router';
 
 const List = () => {
-  //const listId = useParams();
-  const listId = 1;
+  const { listId } = useParams();
   const columns = useSelector((state) =>
     getColumnsByList(state, listId)
   );
   const listData = useSelector((state) =>
     getListById(state, listId)
   );
-  console.log(listData);
 
   return (
     <div className={styles.list}>
@@ -35,7 +33,7 @@ const List = () => {
           <Column key={column.id} {...column} />
         ))}
       </section>
-      <ColumnForm />
+      <ColumnForm listId={listId} />
     </div>
   );
 };
