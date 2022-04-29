@@ -6,8 +6,9 @@ const NotFound = () => {
     <>
       <PageTitle>404 NOT FOUND</PageTitle>
       <p className={styles.text}>
-        page adress is wrong. Please verify and
-        change if needed.
+        page address is wrong or list don't
+        exist. Please verify and change if
+        needed.
       </p>
     </>
   );

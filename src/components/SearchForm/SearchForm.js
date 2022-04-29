@@ -1,7 +1,7 @@
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import styles from './SearchForm.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterCards } from '../../redux/store';
 
@@ -15,6 +15,10 @@ const SearchForm = () => {
     dispatch(filterCards({ search }));
     setSearch('');
   };
+
+  useEffect(() => {
+    dispatch(filterCards({ search: '' }));
+  }, []);
 
   return (
     <form

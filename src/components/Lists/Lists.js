@@ -14,7 +14,7 @@ const Lists = () => {
       {lists.map((list) => (
         <Link
           key={list.id}
-          to={'/list/' + list.id}
+          to={`${process.env.PUBLIC_URL}/list/${list.id}`}
           className={styles.listLink}
         >
           <h3>{list.title}</h3>
