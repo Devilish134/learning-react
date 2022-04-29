@@ -25,6 +25,9 @@ export const getColumnsByList = (
     (column) => column.listId === listId
   );
 
+export const getAllLists = (state) =>
+  state.lists;
+
 export const getListById = (
   { lists },
   listId

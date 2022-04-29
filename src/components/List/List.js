@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import {
-  getAllColumns,
+  //getAllColumns,
   getColumnsByList,
   getListById,
 } from '../../redux/store';
 import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
-import { useParams } from 'react-router';
+//import { useParams } from 'react-router';
 
 const List = () => {
   //const listId = useParams();
