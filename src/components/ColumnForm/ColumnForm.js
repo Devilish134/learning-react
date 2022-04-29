@@ -26,25 +26,34 @@ const ColumnForm = ({ listId }) => {
     setIcon('');
   };
 
+  const Inputs = [
+    {
+      placeholder: 'Category',
+      value: title,
+      onChange: (e) => setTitle(e.target.value),
+    },
+    {
+      placeholder: 'Icon',
+      value: icon,
+      onChange: (e) => setIcon(e.target.value),
+    },
+  ];
+
   return (
     <form
       className={styles.searchForm}
       onSubmit={handleSubmit}
     >
-      <TextInput
-        placeholder='Category'
-        value={title}
-        onChange={(e) =>
-          setTitle(e.target.value)
-        }
-      />
-      <TextInput
-        placeholder='Icon'
-        value={icon}
-        onChange={(e) =>
-          setIcon(e.target.value)
-        }
-      />
+      {Inputs.map(
+        ({ placeholder, value, onChange }) => (
+          <TextInput
+            key={placeholder}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+          />
+        )
+      )}
       <Button>Add column</Button>
     </form>
   );
