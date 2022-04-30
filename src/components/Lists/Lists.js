@@ -4,7 +4,7 @@ import { getAllLists } from '../../redux/store';
 import ListForm from '../ListsForm/ListForm';
 import styles from './Lists.module.scss';
 
-const Lists = () => {
+const Lists = (action) => {
   const lists = useSelector(getAllLists);
 
   return (

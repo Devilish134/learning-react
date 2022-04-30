@@ -4,7 +4,7 @@ import TextInput from '../TextInput/TextInput';
 import shortid from 'shortid';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addColumn } from '../../redux/store';
+import { addList } from '../../redux/store';
 
 const ListsForm = ({ listId }) => {
   const dispatch = useDispatch();
@@ -12,6 +12,20 @@ const ListsForm = ({ listId }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] =
     useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(
+      addList({
+        id: shortid(),
+        listId,
+        title,
+        description,
+      })
+    );
+    setTitle('');
+    setDescription('');
+  };
 
   const Inputs = [
     {
@@ -28,7 +42,10 @@ const ListsForm = ({ listId }) => {
   ];
 
   return (
-    <form className={styles.searchForm}>
+    <form
+      className={styles.searchForm}
+      onSubmit={handleSubmit}
+    >
       {Inputs.map(
         ({ placeholder, value, onChange }) => (
           <TextInput
@@ -39,7 +56,7 @@ const ListsForm = ({ listId }) => {
           />
         )
       )}
-      <Button>Add column</Button>
+      <Button>Add list</Button>
     </form>
   );
 };
