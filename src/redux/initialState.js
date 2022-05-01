@@ -45,7 +45,7 @@ const initialState = {
       id: '1',
       columnId: '1',
       title: 'This is Going to Hurt',
-      isFavorite: false,
+      isFavorite: true,
     },
     {
       id: '2',

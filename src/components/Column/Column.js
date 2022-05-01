@@ -29,6 +29,8 @@ const Column = ({
           <Card
             key={card.id}
             title={card.title}
+            id={card.id}
+            isFavorite={card.isFavorite}
           />
         ))}
       </ul>

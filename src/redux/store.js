@@ -25,6 +25,11 @@ export const getColumnsByList = (
     (column) => column.listId === listId
   );
 
+export const getFavorite = (state) =>
+  state.cards.filter(
+    (card) => card.isFavorite === true
+  );
+
 export const getAllLists = (state) =>
   state.lists;
 
@@ -47,6 +52,11 @@ export const addColumn = (payload) => ({
 
 export const addTitle = (payload) => ({
   type: 'ADD_TITLE',
+  payload,
+});
+
+export const toggleFavorite = (payload) => ({
+  type: 'TOGGLE_CARD_FAVORITE',
   payload,
 });
 
