@@ -83,6 +83,18 @@ const reducer = (state, action) => {
           { ...action.payload },
         ],
       };
+    case 'TOGGLE_CARD_FAVORITE':
+      return {
+        ...state,
+        cards: state.cards.map((card) =>
+          card.id === action.payload
+            ? {
+                ...card,
+                isFavorite: !card.isFavorite,
+              }
+            : card
+        ),
+      };
     case 'FILTER_CARDS':
       return {
         ...state,
