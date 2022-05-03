@@ -16,7 +16,7 @@ export const getColumnsByList = (
 
 // actions
 export const addColumn = (payload) => ({
-  type: 'ADD_COLUMN',
+  type: ADD_COLUMN,
   payload,
 });
 

@@ -12,7 +12,7 @@ const subreducers = {
   lists: listsReducer,
   columns: columnsReducer,
   cards: cardsReducer,
-  searchString: searchReducer,
+  search: searchReducer,
 };
 
 const reducer = combineReducers(subreducers);

@@ -28,7 +28,8 @@ const searchReducer = (
 ) => {
   switch (action.type) {
     case FILTER_CARDS:
-      return action.payload;
+      console.log(action.payload.search);
+      return action.payload.search;
     default:
       return statePart;
   }
