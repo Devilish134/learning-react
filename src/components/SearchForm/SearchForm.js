@@ -1,9 +1,9 @@
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { filterCards } from '../../redux/searchRedux';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import styles from './SearchForm.module.scss';
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { filterCards } from '../../redux/store';
 
 const SearchForm = () => {
   const dispatch = useDispatch();

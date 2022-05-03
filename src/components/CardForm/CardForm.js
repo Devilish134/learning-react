@@ -1,10 +1,10 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTitle } from '../../redux/cardsRedux';
 import styles from './CardForm.module.scss';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import shortid from 'shortid';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTitle } from '../../redux/store';
 
 const CardForm = ({ columnId }) => {
   const dispatch = useDispatch();
